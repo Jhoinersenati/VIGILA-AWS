@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Semanario Loretano')</title>
+    <title>@yield('title', 'VIGILA - Videovigilancia Cloud')</title>
     @yield('open-graph')
     
     <!-- Bootstrap 5 CDN -->
@@ -16,9 +16,9 @@
     
     <style>
         :root {
-            --primary-green: #235347;
-            --secondary-green: #728156;
-            --accent-gold: #c9a96e;
+            --primary-green: #1a252f;
+            --secondary-green: #2c3e50;
+            --accent-gold: #3498db;
         }
         
         body {
@@ -27,8 +27,8 @@
         }
         
         .navbar-custom {
-            background: #003d2b;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            background: #0f171e;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
             padding: 10px 0;
         }
         
@@ -44,7 +44,7 @@
         }
         
         .navbar-custom .nav-link:hover {
-            background-color: #90c25a;
+            background-color: #34495e;
             color: white !important;
         }
         
@@ -298,12 +298,12 @@
                     <img src="{{ asset('storage/' . $header->navbar_logo) }}" alt="{{ $header->title }}" class="header-band-logo" style="height: {{ $header->navbar_logo_height ?? 70 }}px;">
                 @endif
                 <div class="header-band-text">
-                    <h1>{{ $header->title ?? 'Semanario Loretano' }}</h1>
+                    <h1>{{ $header->title ?? 'VIGILA Cloud Security' }}</h1>
                     @if($header && $header->subtitle)
                         <p class="header-band-subtitle">{{ $header->subtitle }}</p>
                     @endif
                     <p class="header-band-description">
-                        {{ $header->description ?? 'Todas las noticias más relevantes de la ciudad de Iquitos y la región Loreto.' }}
+                        {{ $header->description ?? 'Plataforma centralizada de videovigilancia en la nube. Monitoreo, almacenamiento y gestión en tiempo real con tecnología AWS.' }}
                     </p>
                 </div>
             </div>
@@ -320,12 +320,12 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">
-                            <i class="bi bi-house"></i> Inicio
+                            <i class="bi bi-display"></i> Centro de Monitoreo
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('news.public') }}">
-                            <i class="bi bi-eye"></i> Noticias
+                            <i class="bi bi-camera-video"></i> Grabaciones (S3/Glacier)
                         </a>
                     </li>
                     @foreach($navbarSections as $navbarSection)

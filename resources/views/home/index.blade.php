@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $header->title ?? 'Semanario Loretano - Iquitos')
+@section('title', $header->title ?? 'VIGILA - Videovigilancia')
 
 @section('styles')
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -143,19 +143,19 @@
                     <img src="https://via.placeholder.com/1600x900/003d2b/FFFFFF?text=Semanario+Loretano" alt="{{ $coverNews->title }}">
                 @endif
                 <div class="sl-cover-overlay"></div>
-                <span class="sl-cover-label">PORTADA DE LA SEMANA</span>
+                <span class="sl-cover-label">MONITOREO PRINCIPAL - CÁMARA 01</span>
 
                 <div class="sl-cover-content">
                     <h2>{{ $coverNews->title }}</h2>
                     <p>{{ Str::limit($coverNews->summary, 200) }}</p>
-                    <a class="sl-read-button" href="{{ route('news.show', $coverNews) }}">Leer artículo completo →</a>
+                    <a class="sl-read-button" href="{{ route('news.show', $coverNews) }}">Ver grabación →</a>
                 </div>
             </article>
         @endif
 
         <section class="sl-latest-grid">
             <div class="sl-content-heading">
-                <h2>LO ÚLTIMO</h2>
+                <h2>CÁMARAS ACTIVAS</h2>
                 <a href="{{ route('news.public') }}">Ver todas →</a>
             </div>
 
@@ -173,11 +173,11 @@
                             @endif
                             <h3>{{ $news->title }}</h3>
                             <p>{{ Str::limit($news->summary, 90) }}</p>
-                            <a href="{{ route('news.show', $news) }}">Leer noticia →</a>
+                            <a href="{{ route('news.show', $news) }}">Visualizar →</a>
                         </div>
                     </article>
                 @empty
-                    <p class="text-muted mb-0">Aún no hay más noticias publicadas.</p>
+                    <p class="text-muted mb-0">No hay cámaras conectadas en este momento.</p>
                 @endforelse
             </div>
         </section>
@@ -190,12 +190,12 @@
 
 
 <!-- PIE DE PÁGINA -->
-<footer class="mt-4 py-3 rounded" style="background: #003d2b; color: white;">
+<footer class="mt-4 py-3 rounded" style="background: #0f171e; color: white;">
     <div class="container text-center">
-        <small>© {{ date('Y') }} {{ $header->title ?? 'Semanario Loretano' }} | Iquitos – Loreto | Contacto: info@semanarioloretano.com</small>
+        <small>© {{ date('Y') }} {{ $header->title ?? 'VIGILA Cloud Security' }} | AWS Infrastructure | Contacto: aws@vigila.com</small>
         <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap">
-            <a href="{{ route('pages.about') }}" style="color: white; text-decoration: none;">Acerca de Nosotros</a>
-            <a href="{{ route('pages.contact') }}" style="color: white; text-decoration: none;">Contáctenos</a>
+            <a href="{{ route('pages.about') }}" style="color: white; text-decoration: none;">Acerca de la Infraestructura</a>
+            <a href="{{ route('pages.contact') }}" style="color: white; text-decoration: none;">Soporte Técnico</a>
         </div>
     </div>
 </footer>
