@@ -44,6 +44,8 @@ class DatabaseSeeder extends Seeder
             'content' => 'Resolución: 1080p | Frame rate: 30fps | Conectada a la red privada (VPC) para mayor seguridad.',
             'category' => 'Perimetral',
             'section_id' => $zonaExterior->id,
+            'image' => 'cameras/parking.png',
+            'video' => 'videos/sample_camera.mp4',
             'published_at' => now(),
             'is_featured' => true
         ]);
@@ -54,6 +56,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Conexión cifrada a la base de datos Aurora. Acceso solo con tarjeta RFID.',
             'category' => 'Seguridad Crítica',
             'section_id' => $zonaInterior->id,
+            'image' => 'cameras/servers.png',
             'published_at' => now()
         ]);
 
@@ -63,6 +66,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Los videos de esta cámara rotan hacia S3 Glacier después de 30 días automáticamente por Lifecycle Policies.',
             'category' => 'Atención',
             'section_id' => $zonaInterior->id,
+            'image' => 'cameras/reception.png',
             'published_at' => now()
         ]);
 
@@ -71,12 +75,14 @@ class DatabaseSeeder extends Seeder
             'title' => 'Amazon S3 - Bucket de Grabaciones',
             'description' => 'Almacenamiento Standard: 850 GB utilizados. Política de retención activada.',
             'link' => '#',
+            'image' => 'cameras/s3.png',
             'is_active' => true
         ]);
         \App\Models\Advertisement::create([
             'title' => 'Base de Datos Aurora RDS',
             'description' => 'Multi-AZ activado. Réplicas de lectura funcionando al 15% de CPU.',
             'link' => '#',
+            'image' => 'cameras/rds.png',
             'is_active' => true
         ]);
     }
