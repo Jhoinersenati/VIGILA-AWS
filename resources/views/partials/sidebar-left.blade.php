@@ -15,7 +15,7 @@
                 @if($analysisNews->image)
                     <img src="{{ asset('storage/' . $analysisNews->image) }}" alt="{{ $analysisNews->title }}">
                 @else
-                    <img src="https://placehold.co/400x300/112233/FFFFFF?text=CCTV" alt="{{ $analysisNews->title }}">
+                    <img src="https://placehold.co/400x300/112233/112233" alt="{{ $analysisNews->title }}">
                 @endif
                 <div>
                     <h3>{{ $analysisNews->title }}</h3>
@@ -37,7 +37,7 @@
                 @if($techNews->image)
                     <img src="{{ asset('storage/' . $techNews->image) }}" alt="{{ $techNews->title }}">
                 @else
-                    <img src="https://placehold.co/400x300/112233/FFFFFF?text=CCTV" alt="{{ $techNews->title }}">
+                    <img src="https://placehold.co/400x300/112233/112233" alt="{{ $techNews->title }}">
                 @endif
                 <div>
                     <h3>{{ $techNews->title }}</h3>
@@ -48,4 +48,5 @@
         </section>
     @endif
 </aside>
+
 

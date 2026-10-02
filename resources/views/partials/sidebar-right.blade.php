@@ -1,8 +1,8 @@
-<aside class="sl-right-column">
+﻿<aside class="sl-right-column">
     <section class="sl-side-card sl-latest-card">
         <div class="sl-right-title">
-            <h2>▣ &nbsp; ALARMAS Y EVENTOS</h2>
-            <a href="{{ route('news.public') }}">Ver todas →</a>
+            <h2>â–£ &nbsp; ALARMAS Y EVENTOS</h2>
+            <a href="{{ route('news.public') }}">Ver todas â†’</a>
         </div>
 
         @forelse($latestNews as $news)
@@ -10,7 +10,7 @@
                 @if($news->image)
                     <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                 @else
-                    <img src="https://placehold.co/200x150/112233/FFFFFF?text=CCTV" alt="{{ $news->title }}">
+                    <img src="https://placehold.co/200x150/112233/112233" alt="{{ $news->title }}">
                 @endif
                 <div>
                     <h3>{{ $news->title }}</h3>
@@ -29,24 +29,25 @@
                     @if($ad->image)
                         <img src="{{ asset('storage/' . $ad->image) }}" alt="{{ $ad->title }}">
                     @else
-                        <img src="https://placehold.co/300x200/005522/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
+                        <img src="https://placehold.co/300x200/112233/112233" alt="{{ $ad->title }}">
                     @endif
                 </a>
             @else
                 @if($ad->image)
                     <img src="{{ asset('storage/' . $ad->image) }}" alt="{{ $ad->title }}">
                 @else
-                    <img src="https://placehold.co/300x200/005522/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
+                    <img src="https://placehold.co/300x200/112233/112233" alt="{{ $ad->title }}">
                 @endif
             @endif
             <p class="mt-2 mb-0 small">{{ $ad->description ?? $ad->title }}</p>
         </section>
     @empty
         <section class="sl-advertising">
-            <div class="sl-ad-icon">📣</div>
+            <div class="sl-ad-icon">ðŸ“£</div>
             <h2>ESTADO ALMACENAMIENTO AWS</h2>
             <p><strong>Amazon S3 Standard:</strong> 450 GB<br><strong>Amazon S3 Glacier:</strong> 1.2 TB</p>
-            <a href="#">Ver métricas CloudWatch</a>
+            <a href="#">Ver mÃ©tricas CloudWatch</a>
         </section>
     @endforelse
 </aside>
+

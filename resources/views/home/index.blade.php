@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', $header->title ?? 'VIGILA - Videovigilancia')
 
@@ -140,23 +140,23 @@
                 @if($coverNews->image)
                     <img src="{{ asset('storage/' . $coverNews->image) }}" alt="{{ $coverNews->title }}">
                 @else
-                    <img src="https://placehold.co/1600x900/112233/FFFFFF?text=CAMARA+01+-+Feed+en+Vivo" alt="{{ $coverNews->title }}">
+                    <img src="https://placehold.co/1600x900/112233/112233" alt="{{ $coverNews->title }}">
                 @endif
                 <div class="sl-cover-overlay"></div>
-                <span class="sl-cover-label">MONITOREO PRINCIPAL - CÁMARA 01</span>
+                <span class="sl-cover-label">MONITOREO PRINCIPAL - CÃMARA 01</span>
 
                 <div class="sl-cover-content">
                     <h2>{{ $coverNews->title }}</h2>
                     <p>{{ Str::limit($coverNews->summary, 200) }}</p>
-                    <a class="sl-read-button" href="{{ route('news.show', $coverNews) }}">Ver grabación →</a>
+                    <a class="sl-read-button" href="{{ route('news.show', $coverNews) }}">Ver grabaciÃ³n â†’</a>
                 </div>
             </article>
         @endif
 
         <section class="sl-latest-grid">
             <div class="sl-content-heading">
-                <h2>CÁMARAS ACTIVAS</h2>
-                <a href="{{ route('news.public') }}">Ver todas →</a>
+                <h2>CÃMARAS ACTIVAS</h2>
+                <a href="{{ route('news.public') }}">Ver todas â†’</a>
             </div>
 
             <div class="sl-news-grid">
@@ -165,7 +165,7 @@
                         @if($news->image)
                             <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                         @else
-                            <img src="https://placehold.co/270x220/112233/FFFFFF?text=CCTV" alt="{{ $news->title }}">
+                            <img src="https://placehold.co/270x220/112233/112233" alt="{{ $news->title }}">
                         @endif
                         <div>
                             @if($news->category)
@@ -173,11 +173,11 @@
                             @endif
                             <h3>{{ $news->title }}</h3>
                             <p>{{ Str::limit($news->summary, 90) }}</p>
-                            <a href="{{ route('news.show', $news) }}">Visualizar →</a>
+                            <a href="{{ route('news.show', $news) }}">Visualizar â†’</a>
                         </div>
                     </article>
                 @empty
-                    <p class="text-muted mb-0">No hay cámaras conectadas en este momento.</p>
+                    <p class="text-muted mb-0">No hay cÃ¡maras conectadas en este momento.</p>
                 @endforelse
             </div>
         </section>
@@ -189,13 +189,13 @@
 </div>
 
 
-<!-- PIE DE PÁGINA -->
+<!-- PIE DE PÃGINA -->
 <footer class="mt-4 py-3 rounded" style="background: #0f171e; color: white;">
     <div class="container text-center">
-        <small>© {{ date('Y') }} {{ $header->title ?? 'VIGILA Cloud Security' }} | AWS Infrastructure | Contacto: aws@vigila.com</small>
+        <small>Â© {{ date('Y') }} {{ $header->title ?? 'VIGILA Cloud Security' }} | AWS Infrastructure | Contacto: aws@vigila.com</small>
         <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap">
             <a href="{{ route('pages.about') }}" style="color: white; text-decoration: none;">Acerca de la Infraestructura</a>
-            <a href="{{ route('pages.contact') }}" style="color: white; text-decoration: none;">Soporte Técnico</a>
+            <a href="{{ route('pages.contact') }}" style="color: white; text-decoration: none;">Soporte TÃ©cnico</a>
         </div>
     </div>
 </footer>
