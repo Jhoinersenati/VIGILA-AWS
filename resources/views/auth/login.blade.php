@@ -37,9 +37,9 @@
 <div class="login-container">
     <div class="login-card">
         <div class="logo">
-            <i class="bi bi-newspaper" style="font-size: 3rem; color: var(--primary-green);"></i>
-            <h2>Semanario Loretano</h2>
-            <p class="text-muted">Accede al panel de administración</p>
+            <i class="bi bi-shield-lock" style="font-size: 3rem; color: var(--primary-green);"></i>
+            <h2>VIGILA Cloud Security</h2>
+            <p class="text-muted">Acceso seguro al sistema</p>
         </div>
         
         @if ($errors->any())
@@ -74,7 +74,7 @@
         <div class="mt-3 text-center">
             <small class="text-muted">
                 Credenciales por defecto:<br>
-                Email: admin@admin.com<br>
+                Email: admin@vigila.com<br>
                 Contraseña: password
             </small>
         </div>
