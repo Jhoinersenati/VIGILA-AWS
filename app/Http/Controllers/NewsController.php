@@ -44,6 +44,7 @@ class NewsController extends Controller
             'category' => 'nullable|string|max:100',
             'section_id' => 'nullable|exists:sections,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'video' => 'nullable|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:50000',
             'is_featured' => 'boolean',
         ]);
 
@@ -52,6 +53,11 @@ class NewsController extends Controller
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('news', 'public');
             $data['image'] = $imagePath;
+        }
+
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('videos', 'public');
+            $data['video'] = $videoPath;
         }
 
         $data['published_at'] = now();
@@ -99,6 +105,7 @@ class NewsController extends Controller
             'category' => 'nullable|string|max:100',
             'section_id' => 'nullable|exists:sections,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'video' => 'nullable|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:50000',
             'is_featured' => 'boolean',
         ]);
 
@@ -110,6 +117,14 @@ class NewsController extends Controller
             }
             $imagePath = $request->file('image')->store('news', 'public');
             $data['image'] = $imagePath;
+        }
+
+        if ($request->hasFile('video')) {
+            if ($news->video) {
+                Storage::disk('public')->delete($news->video);
+            }
+            $videoPath = $request->file('video')->store('videos', 'public');
+            $data['video'] = $videoPath;
         }
 
         $news->update($data);

@@ -91,6 +91,13 @@
                 </div>
             @endif
 
+            <!-- Video -->
+            @if($news->video)
+                <div class="mb-4 text-center bg-dark p-2 rounded">
+                    <video src="{{ asset('storage/' . $news->video) }}" controls autoplay muted loop class="w-100 rounded" style="max-height: 500px;"></video>
+                </div>
+            @endif
+
             <!-- Resumen destacado -->
             <div class="bg-soft-green p-4 rounded-3 mb-4 border-start border-4 border-warning">
                 <h6 class="fw-bold text-uppercase small text-muted mb-2">📌 Resumen</h6>

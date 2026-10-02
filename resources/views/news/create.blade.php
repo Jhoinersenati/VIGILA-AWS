@@ -72,6 +72,15 @@
                             @enderror
                         </div>
 
+                        <div class="mb-3">
+                            <label for="video" class="form-label">Video (Opcional, max 50MB)</label>
+                            <input type="file" class="form-control @error('video') is-invalid @enderror" 
+                                   id="video" name="video" accept="video/mp4,video/avi,video/mpeg,video/quicktime">
+                            @error('video')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="is_featured" name="is_featured" value="1">
                             <label class="form-check-label" for="is_featured">Marcar como destacada</label>
