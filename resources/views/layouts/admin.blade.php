@@ -90,13 +90,13 @@
                 <i class="bi bi-grid-1x2"></i> Panel Principal
             </a>
             <a href="{{ route('news.index') }}" class="sidebar-link {{ request()->routeIs('news.*') ? 'active' : '' }}">
-                <i class="bi bi-newspaper"></i> Cámaras
+                <i class="bi bi-camera-video"></i> Cámaras
             </a>
             <a href="{{ route('advertisements.index') }}" class="sidebar-link {{ request()->routeIs('advertisements.*') ? 'active' : '' }}">
-                <i class="bi bi-image"></i> Publicidad
+                <i class="bi bi-server"></i> Infraestructura
             </a>
             <a href="{{ route('header.edit') }}" class="sidebar-link {{ request()->routeIs('header.*') ? 'active' : '' }}">
-                <i class="bi bi-layout-text-window"></i> Encabezado
+                <i class="bi bi-gear"></i> Configuración
             </a>
             <a href="{{ route('pages.edit') }}" class="sidebar-link {{ request()->routeIs('pages.edit') || request()->routeIs('pages.update') ? 'active' : '' }}">
                 <i class="bi bi-file-earmark-text"></i> Contáctenos / Nosotros
@@ -105,7 +105,7 @@
                 <i class="bi bi-people"></i> Usuarios
             </a>
             <a href="{{ route('sections.index') }}" class="sidebar-link {{ request()->routeIs('sections.*') ? 'active' : '' }}">
-                <i class="bi bi-collection"></i> Secciones
+                <i class="bi bi-geo-alt"></i> Zonas
             </a>
         </nav>
     </aside>
