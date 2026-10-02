@@ -109,24 +109,7 @@
                 {!! nl2br(e($news->content)) !!}
             </div>
 
-            <!-- Compartir (opcional) -->
-            <div class="mt-4 pt-3 border-top">
-                <h6 class="text-muted">Compartir:</h6>
-                <div class="d-flex gap-2">
-                    <a href="https://twitter.com/intent/tweet?text={{ urlencode($news->title) }}&url={{ urlencode(url()->current()) }}" 
-                       target="_blank" class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-twitter"></i> Twitter
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" 
-                       target="_blank" class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-facebook"></i> Facebook
-                    </a>
-                    <a href="https://wa.me/?text={{ urlencode($news->title . ' - ' . url()->current()) }}" 
-                       target="_blank" class="btn btn-outline-success btn-sm">
-                        <i class="bi bi-whatsapp"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
+            <!-- (Botones de compartir eliminados por seguridad) -->
 
             <!-- Acciones admin -->
             @auth

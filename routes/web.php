@@ -13,8 +13,8 @@ use App\Http\Controllers\PageController;
 // Página principal
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Listado público de noticias
-Route::get('/noticias', [NewsController::class, 'publicIndex'])->name('news.public');
+// Listado público de cámaras
+Route::get('/camaras', [NewsController::class, 'publicIndex'])->name('news.public');
 
 // Páginas informativas
 Route::get('/contactenos', [PageController::class, 'contact'])->name('pages.contact');
@@ -27,13 +27,15 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
     ->name('dashboard');
 
-// CRUD Noticias
-Route::get('/news', [NewsController::class, 'index'])
+// CRUD Cámaras
+Route::get('/camaras/admin', [NewsController::class, 'index'])
     ->middleware('auth')
     ->name('news.index');
-Route::resource('news', NewsController::class)->except(['index', 'show'])
+Route::resource('camaras', NewsController::class)->except(['index', 'show'])
+    ->parameters(['camaras' => 'news'])
+    ->names('news')
     ->middleware('auth');
-Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
+Route::get('/camaras/{news}', [NewsController::class, 'show'])->name('news.show');
 
 // Secciones públicas y administrativas
 Route::get('/secciones/{section}', [SectionController::class, 'show'])->name('sections.show');

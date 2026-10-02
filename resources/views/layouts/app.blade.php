@@ -12,24 +12,28 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-green: #1a252f;
-            --secondary-green: #2c3e50;
-            --accent-gold: #3498db;
+            --primary-bg: #f8fafc;
+            --aws-dark: #232f3e;
+            --aws-orange: #ff9900;
+            --aws-blue: #0073bb;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
-            background: #f5f0eb;
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-dark);
         }
         
         .navbar-custom {
-            background: #0f171e;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
-            padding: 10px 0;
+            background: var(--aws-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
         }
         
         .navbar-custom .navbar-nav {
@@ -37,36 +41,41 @@
         }
 
         .navbar-custom .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            transition: background-color 0.2s, color 0.2s;
+            color: rgba(255,255,255,0.85) !important;
+            transition: all 0.2s ease-in-out;
             padding: 10px 16px !important;
             border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .navbar-custom .nav-link:hover {
-            background-color: #34495e;
-            color: white !important;
+            color: var(--aws-orange) !important;
+            background-color: rgba(255, 255, 255, 0.05);
         }
         
         .btn-gold {
-            background: var(--accent-gold);
-            color: white;
+            background: var(--aws-orange);
+            color: #fff;
             border: none;
             transition: all 0.3s;
+            font-weight: 600;
         }
         
         .btn-gold:hover {
-            background: #b8944a;
+            background: #e38800;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.4);
+            box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
         }
         
         .news-card {
-            border-left: 4px solid var(--accent-gold);
+            border-left: 4px solid var(--aws-blue);
             background: white;
             transition: all 0.3s;
             cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         .news-card:hover {
@@ -179,9 +188,22 @@
 
         .site-header-band {
             position: relative;
-            min-height: 230px;
+            min-height: 280px;
             overflow: hidden;
-            border-bottom: 1px solid #e2e6e2;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 4px solid var(--aws-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .site-header-band::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 5;
         }
 
         .site-header-band .header-band-image {
@@ -200,8 +222,8 @@
 
         @keyframes header-band-slider {
             0% { opacity: 0; }
-            5% { opacity: 1; }
-            30% { opacity: 1; }
+            5% { opacity: 0.8; }
+            30% { opacity: 0.8; }
             35% { opacity: 0; }
             100% { opacity: 0; }
         }
@@ -209,59 +231,65 @@
         @media (prefers-reduced-motion: reduce) {
             .site-header-band .header-band-image {
                 animation: none;
-                opacity: 1;
+                opacity: 0.5;
             }
         }
 
         .site-header-band .header-band-inner {
             position: relative;
-            max-width: 1140px;
+            max-width: 1000px;
             margin: auto;
-            height: 100%;
-            min-height: 230px;
-            padding: 24px 15px;
+            z-index: 10;
+            padding: 40px 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .site-header-band .header-band-inner {
-            gap: 18px;
+            justify-content: center;
+            gap: 15px;
         }
 
         .site-header-band .header-band-logo {
             width: auto;
             border-radius: 8px;
-            object-fit: cover;
+            object-fit: contain;
             flex-shrink: 0;
+            margin-bottom: 10px;
         }
 
         .site-header-band .header-band-text {
-            max-width: 640px;
+            width: 100%;
         }
 
         .site-header-band h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(24px, 3vw, 34px);
-            color: #fff;
-            text-shadow: 0 2px 6px rgba(0,0,0,.6);
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
             margin: 0;
         }
 
         .site-header-band .header-band-subtitle {
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-            color: #fff;
-            text-shadow: 0 2px 6px rgba(0,0,0,.6);
-            margin-top: 6px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            color: var(--aws-orange);
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            margin-top: 10px;
         }
 
         .site-header-band .header-band-description {
-            font-size: 0.9rem;
-            color: #fff;
-            text-shadow: 0 2px 6px rgba(0,0,0,.6);
-            margin-top: 8px;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            margin-top: 15px;
+            line-height: 1.6;
             margin-bottom: 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 767.98px) {

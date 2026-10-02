@@ -8,11 +8,12 @@
 <style>
     .sl-cover-story {
         position: relative;
-        min-height: 500px;
-        border-radius: 5px;
+        min-height: 550px;
+        border-radius: 8px;
         overflow: hidden;
-        background: #123;
-        box-shadow: 0 3px 15px rgba(0,0,0,.12);
+        background: #000;
+        box-shadow: 0 10px 25px rgba(0,0,0,.15);
+        border: 1px solid #334155;
     }
 
     .sl-cover-story > img {
@@ -20,95 +21,140 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 0.85;
     }
 
     .sl-cover-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,.03) 25%, rgba(0,0,0,.88) 100%);
+        background: linear-gradient(to bottom, rgba(15,23,42,.2) 20%, rgba(15,23,42,.95) 100%);
     }
 
     .sl-cover-label {
         position: absolute;
-        top: 18px;
-        left: 18px;
-        background: #e21e25;
+        top: 20px;
+        left: 20px;
+        background: rgba(220, 38, 38, 0.9);
         color: white;
-        font-weight: 800;
-        padding: 9px 14px;
+        font-weight: 700;
+        padding: 6px 12px;
         border-radius: 4px;
-        font-size: 14px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 10px rgba(220, 38, 38, 0.4);
+    }
+    
+    .sl-cover-label::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border-radius: 50%;
+        animation: pulse-red 1.5s infinite;
+    }
+
+    @keyframes pulse-red {
+        0% { transform: scale(0.95); opacity: 0.5; }
+        50% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(0.95); opacity: 0.5; }
     }
 
     .sl-cover-content {
         position: absolute;
-        bottom: 30px;
-        left: 28px;
-        right: 28px;
+        bottom: 35px;
+        left: 35px;
+        right: 35px;
         color: white;
     }
 
     .sl-cover-content h2 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(26px, 3vw, 42px);
-        line-height: 1.1;
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1.2;
         font-weight: 800;
         max-width: 900px;
-        text-shadow: 0 2px 5px #000;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        margin-bottom: 12px;
     }
 
     .sl-cover-content p {
         max-width: 850px;
-        margin: 14px 0 18px;
-        font-size: 15px;
-        text-shadow: 0 1px 3px #000;
+        margin: 0 0 20px 0;
+        font-size: 16px;
+        color: #cbd5e1;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        line-height: 1.6;
     }
 
     .sl-read-button {
-        display: inline-block;
-        background: #f21e2b;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--aws-blue);
         color: white;
-        padding: 13px 20px;
-        border-radius: 4px;
-        font-weight: 800;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 600;
         text-decoration: none;
+        transition: all 0.2s;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sl-read-button:hover {
+        background: #005a93;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 115, 187, 0.4);
     }
 
     .sl-latest-grid {
         background: white;
-        margin-top: 16px;
-        padding: 18px;
-        border-radius: 5px;
+        margin-top: 24px;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        border: 1px solid #e2e8f0;
     }
 
     .sl-content-heading {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 2px solid #0c6545;
-        padding-bottom: 9px;
-        margin-bottom: 14px;
+        border-bottom: 2px solid var(--aws-orange);
+        padding-bottom: 12px;
+        margin-bottom: 20px;
     }
 
-    .sl-content-heading h2 { font-size: 19px; margin: 0; }
-    .sl-content-heading a { color: #0c6545; font-size: 12px; font-weight: 800; text-decoration: none; }
+    .sl-content-heading h2 { font-size: 20px; font-weight: 800; margin: 0; color: var(--text-dark); }
+    .sl-content-heading a { color: var(--aws-blue); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .sl-content-heading a:hover { text-decoration: underline; }
 
-    .sl-news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .sl-news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
     .sl-news-card {
         display: grid;
-        grid-template-columns: 135px 1fr;
-        gap: 13px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 13px;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 16px;
         cursor: pointer;
+        transition: transform 0.2s;
+    }
+    
+    .sl-news-card:hover {
+        transform: translateX(4px);
     }
 
-    .sl-news-card img { width: 135px; height: 110px; object-fit: cover; border-radius: 4px; }
-    .sl-news-card span { font-size: 10px; color: #16803e; font-weight: 800; }
-    .sl-news-card h3 { font-size: 15px; line-height: 1.15; margin: 4px 0; }
-    .sl-news-card p { font-size: 11px; color: #65716c; }
-    .sl-news-card a { display: block; margin-top: 5px; color: #0c6545; font-size: 11px; font-weight: 800; text-decoration: none; }
+    .sl-news-card img { width: 140px; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0; }
+    .sl-news-card span { font-size: 11px; color: var(--aws-orange); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sl-news-card h3 { font-size: 16px; font-weight: 700; line-height: 1.3; margin: 6px 0; color: var(--text-dark); }
+    .sl-news-card p { font-size: 13px; color: #64748b; margin-bottom: 8px; line-height: 1.5; }
+    .sl-news-card a { display: inline-block; color: var(--aws-blue); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .sl-news-card a:hover { color: #005a93; }
 
     @media (max-width: 1150px) {
         .sl-cover-story { min-height: 420px; }
@@ -143,7 +189,7 @@
                     <img src="https://via.placeholder.com/1600x900/003d2b/FFFFFF?text=Semanario+Loretano" alt="{{ $coverNews->title }}">
                 @endif
                 <div class="sl-cover-overlay"></div>
-                <span class="sl-cover-label">MONITOREO PRINCIPAL - CÁMARA 01</span>
+                <span class="sl-cover-label">EN VIVO - MONITOREO</span>
 
                 <div class="sl-cover-content">
                     <h2>{{ $coverNews->title }}</h2>
