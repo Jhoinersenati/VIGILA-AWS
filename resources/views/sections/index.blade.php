@@ -11,7 +11,7 @@
     @if(session('success')) <div class="alert alert-success">{{ session('success') }}</div> @endif
     <div class="card shadow-sm"><div class="card-body"><div class="table-responsive">
         <table class="table table-hover align-middle">
-            <thead><tr><th>Sección</th><th>Navbar público</th><th>Noticias</th><th class="text-end">Acciones</th></tr></thead>
+            <thead><tr><th>Sección</th><th>Navbar público</th><th>Cámaras</th><th class="text-end">Acciones</th></tr></thead>
             <tbody>
                 @forelse($sections as $section)
                     <tr>
@@ -19,7 +19,7 @@
                         <td>{!! $section->show_in_nav ? '<span class="badge bg-success">Visible</span>' : '<span class="badge bg-secondary">Oculta</span>' !!}</td>
                         <td>{{ $section->news()->count() }}</td>
                         <td class="text-end"><div class="btn-group btn-group-sm">
-                            <a href="{{ route('sections.news.index', $section) }}" class="btn btn-outline-primary" title="Gestionar noticias"><i class="bi bi-newspaper"></i></a>
+                            <a href="{{ route('sections.news.index', $section) }}" class="btn btn-outline-primary" title="Gestionar cámaras"><i class="bi bi-newspaper"></i></a>
                             <a href="{{ route('sections.edit', $section) }}" class="btn btn-outline-warning" title="Editar sección"><i class="bi bi-pencil"></i></a>
                             <form action="{{ route('sections.destroy', $section) }}" method="POST">@csrf @method('DELETE')<button class="btn btn-outline-danger" title="Eliminar sección" onclick="return confirm('¿Eliminar esta sección?')"><i class="bi bi-trash"></i></button></form>
                         </div></td>

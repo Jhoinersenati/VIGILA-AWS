@@ -90,7 +90,7 @@
                 <i class="bi bi-grid-1x2"></i> Panel Principal
             </a>
             <a href="{{ route('news.index') }}" class="sidebar-link {{ request()->routeIs('news.*') ? 'active' : '' }}">
-                <i class="bi bi-newspaper"></i> Noticias
+                <i class="bi bi-newspaper"></i> Cámaras
             </a>
             <a href="{{ route('advertisements.index') }}" class="sidebar-link {{ request()->routeIs('advertisements.*') ? 'active' : '' }}">
                 <i class="bi bi-image"></i> Publicidad

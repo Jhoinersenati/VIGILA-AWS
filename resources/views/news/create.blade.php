@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Crear Noticia')
+@section('title', 'Crear Cámara')
 
 @section('admin-content')
 <div class="container py-4">
@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-header bg-soft-green">
-                    <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Crear Nueva Noticia</h5>
+                    <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Crear Nueva Cámara</h5>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
@@ -82,7 +82,7 @@
                                 <i class="bi bi-arrow-left"></i> Volver
                             </a>
                             <button type="submit" class="btn btn-gold">
-                                <i class="bi bi-save"></i> Crear Noticia
+                                <i class="bi bi-save"></i> Crear Cámara
                             </button>
                         </div>
                     </form>

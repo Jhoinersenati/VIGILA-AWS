@@ -57,7 +57,7 @@ class NewsController extends Controller
         $data['published_at'] = now();
         News::create($data);
 
-        return redirect()->route('news.index')->with('success', 'Noticia creada exitosamente.');
+        return redirect()->route('news.index')->with('success', 'Cámara creada exitosamente.');
     }
 
     public function show(News $news)
@@ -114,7 +114,7 @@ class NewsController extends Controller
 
         $news->update($data);
 
-        return redirect()->route('news.index')->with('success', 'Noticia actualizada exitosamente.');
+        return redirect()->route('news.index')->with('success', 'Cámara actualizada exitosamente.');
     }
 
     public function destroy(News $news)
@@ -124,6 +124,6 @@ class NewsController extends Controller
         }
         $news->delete();
 
-        return redirect()->route('news.index')->with('success', 'Noticia eliminada exitosamente.');
+        return redirect()->route('news.index')->with('success', 'Cámara eliminada exitosamente.');
     }
 }

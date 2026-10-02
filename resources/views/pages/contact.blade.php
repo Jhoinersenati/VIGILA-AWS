@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contáctenos - ' . ($header->title ?? 'Semanario Loretano'))
+@section('title', 'Contáctenos - ' . ($header->title ?? 'VIGILA Cloud Security'))
 
 @section('content')
 <div class="container py-5">

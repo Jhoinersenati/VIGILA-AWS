@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard - Semanario Loretano')
+@section('title', 'Dashboard - VIGILA Cloud Security')
 
 @section('admin-styles')
 <style>
@@ -17,7 +17,7 @@
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="stat-card">
-                    <h6 class="text-muted">Total Noticias</h6>
+                    <h6 class="text-muted">Total Cámaras</h6>
                     <h2 class="fw-bold text-primary">{{ \App\Models\News::count() }}</h2>
                     <a href="{{ route('news.index') }}" class="text-decoration-none">Ver todas</a>
                 </div>
@@ -143,7 +143,7 @@
                     <div class="col-md-3">
                         <a href="{{ route('news.create') }}" class="btn btn-outline-primary w-100 py-3">
                             <i class="bi bi-plus-circle"></i><br>
-                            Nueva Noticia
+                            Nueva Cámara
                         </a>
                     </div>
                     <div class="col-md-3">

@@ -165,7 +165,7 @@
                         @if($news->image)
                             <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                         @else
-                            <img src="https://via.placeholder.com/270x220/235347/FFFFFF?text=Noticia" alt="{{ $news->title }}">
+                            <img src="https://via.placeholder.com/270x220/235347/FFFFFF?text=Cámara" alt="{{ $news->title }}">
                         @endif
                         <div>
                             @if($news->category)

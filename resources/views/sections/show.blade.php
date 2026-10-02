@@ -27,7 +27,7 @@
                     </div>
                 </a>
             @empty
-                <p class="text-muted">Aún no hay noticias en esta sección.</p>
+                <p class="text-muted">Aún no hay cámaras en esta sección.</p>
             @endforelse
         </section>
     </div></div>

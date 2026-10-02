@@ -356,7 +356,7 @@
                                 {{ now()->translatedFormat('l, d \d\e F \d\e Y') }}
                             </div>
                             @if($latestNavbarNews->isNotEmpty())
-                                <div class="navbar-news-window" aria-label="Últimas noticias">
+                                <div class="navbar-news-window" aria-label="Últimas cámaras">
                                     <div class="navbar-news-track">
                                         @foreach($latestNavbarNews as $latestNews)
                                             <span class="navbar-news-item">

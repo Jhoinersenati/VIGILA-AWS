@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Gestionar Noticias')
+@section('title', 'Gestionar Cámaras')
 
 @section('admin-content')
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4><i class="bi bi-newspaper"></i> Gestionar Noticias</h4>
+        <h4><i class="bi bi-newspaper"></i> Gestionar Cámaras</h4>
         <a href="{{ route('news.create') }}" class="btn btn-gold">
-            <i class="bi bi-plus-circle"></i> Nueva Noticia
+            <i class="bi bi-plus-circle"></i> Nueva Cámara
         </a>
     </div>
 
@@ -55,7 +55,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger" 
-                                                    onclick="return confirm('¿Eliminar esta noticia?')">
+                                                    onclick="return confirm('¿Eliminar esta cámara?')">
                                                 <i class="bi bi-trash"></i>
                                             </button>
                                         </form>

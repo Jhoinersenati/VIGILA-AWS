@@ -4,7 +4,7 @@
 
 @section('open-graph')
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Semanario Loretano">
+<meta property="og:site_name" content="VIGILA Cloud Security">
 <meta property="og:title" content="{{ $news->title }}">
 <meta property="og:description" content="{{ Str::limit($news->summary, 200) }}">
 <meta property="og:url" content="{{ url()->current() }}">
@@ -132,7 +132,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" 
-                                    onclick="return confirm('¿Estás seguro de eliminar esta noticia?')">
+                                    onclick="return confirm('¿Estás seguro de eliminar esta cámara?')">
                                 <i class="bi bi-trash"></i> Eliminar
                             </button>
                         </form>

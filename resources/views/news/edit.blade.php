@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Editar Noticia')
+@section('title', 'Editar Cámara')
 
 @section('admin-content')
 <div class="container py-4">
@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-header bg-soft-green">
-                    <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Editar Noticia</h5>
+                    <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Editar Cámara</h5>
                 </div>
                 <div class="card-body">
                     @if(session('success'))
@@ -97,7 +97,7 @@
                                 <i class="bi bi-arrow-left"></i> Volver
                             </a>
                             <button type="submit" class="btn btn-gold">
-                                <i class="bi bi-save"></i> Actualizar Noticia
+                                <i class="bi bi-save"></i> Actualizar Cámara
                             </button>
                         </div>
                     </form>

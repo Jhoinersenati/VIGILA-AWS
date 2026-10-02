@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Todas las noticias')
+@section('title', 'Todas las cámaras')
 
 @section('styles')
 <style>
@@ -24,7 +24,7 @@
 <div class="container py-4">
     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
         <div>
-            <h1 class="h3 mb-1"><i class="bi bi-newspaper"></i> Todas las noticias</h1>
+            <h1 class="h3 mb-1"><i class="bi bi-newspaper"></i> Todas las cámaras</h1>
             <p class="text-muted mb-0">Información y actualidad de la ciudad de Iquitos</p>
         </div>
         <a href="{{ route('home') }}" class="btn btn-outline-secondary">
@@ -61,7 +61,7 @@
                             <h2 class="h5 card-title">{{ $item->title }}</h2>
                             <p class="card-text text-muted">{{ Str::limit($item->summary, 150) }}</p>
                             <a href="{{ route('news.show', $item) }}" class="btn btn-outline-primary mt-auto align-self-start">
-                                <i class="bi bi-eye"></i> Leer noticia
+                                <i class="bi bi-eye"></i> Leer cámara
                             </a>
                         </div>
                     </article>
@@ -75,7 +75,7 @@
     @else
         <div class="text-center py-5">
             <i class="bi bi-newspaper text-muted" style="font-size: 4rem;"></i>
-            <h2 class="h4 mt-3">Aún no hay noticias publicadas</h2>
+            <h2 class="h4 mt-3">Aún no hay cámaras publicadas</h2>
             <p class="text-muted">Vuelve pronto para consultar las novedades.</p>
         </div>
     @endif
