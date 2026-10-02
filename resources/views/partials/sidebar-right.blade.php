@@ -1,7 +1,7 @@
 <aside class="sl-right-column">
     <section class="sl-side-card sl-latest-card">
         <div class="sl-right-title">
-            <h2>▣ &nbsp; ÚLTIMAS NOTICIAS</h2>
+            <h2>▣ &nbsp; ALARMAS Y EVENTOS</h2>
             <a href="{{ route('news.public') }}">Ver todas →</a>
         </div>
 
@@ -18,7 +18,7 @@
                 </div>
             </article>
         @empty
-            <p class="text-muted mb-0">Aún no hay noticias publicadas.</p>
+            <p class="text-muted mb-0">Sistema en funcionamiento normal. 0 eventos.</p>
         @endforelse
     </section>
 
@@ -44,9 +44,9 @@
     @empty
         <section class="sl-advertising">
             <div class="sl-ad-icon">📣</div>
-            <h2>TU PUBLICIDAD AQUÍ</h2>
-            <p>Llega a miles de lectores en toda la región.</p>
-            <a href="mailto:publicidad@semanarioloretano.pe">Contáctanos</a>
+            <h2>ESTADO ALMACENAMIENTO AWS</h2>
+            <p><strong>Amazon S3 Standard:</strong> 450 GB<br><strong>Amazon S3 Glacier:</strong> 1.2 TB</p>
+            <a href="#">Ver métricas CloudWatch</a>
         </section>
     @endforelse
 </aside>
