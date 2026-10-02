@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-header bg-soft-green">
-                    <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Editar Encabezado del Semanario</h5>
+                    <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Editar Encabezado de VIGILA</h5>
                 </div>
                 <div class="card-body">
                     @if(session('success'))

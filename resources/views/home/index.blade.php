@@ -186,7 +186,7 @@
                 @if($coverNews->image)
                     <img src="{{ asset('storage/' . $coverNews->image) }}" alt="{{ $coverNews->title }}">
                 @else
-                    <img src="https://via.placeholder.com/1600x900/003d2b/FFFFFF?text=Semanario+Loretano" alt="{{ $coverNews->title }}">
+                    <img src="https://via.placeholder.com/1600x900/1e293b/FFFFFF?text=VIGILA+Cloud" alt="{{ $coverNews->title }}">
                 @endif
                 <div class="sl-cover-overlay"></div>
                 <span class="sl-cover-label">EN VIVO - MONITOREO</span>
