@@ -140,7 +140,7 @@
                 @if($coverNews->image)
                     <img src="{{ asset('storage/' . $coverNews->image) }}" alt="{{ $coverNews->title }}">
                 @else
-                    <img src="https://via.placeholder.com/1600x900/003d2b/FFFFFF?text=Semanario+Loretano" alt="{{ $coverNews->title }}">
+                    <img src="https://placehold.co/1600x900/112233/FFFFFF?text=CAMARA+01+-+Feed+en+Vivo" alt="{{ $coverNews->title }}">
                 @endif
                 <div class="sl-cover-overlay"></div>
                 <span class="sl-cover-label">MONITOREO PRINCIPAL - CÁMARA 01</span>
@@ -165,7 +165,7 @@
                         @if($news->image)
                             <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                         @else
-                            <img src="https://via.placeholder.com/270x220/235347/FFFFFF?text=Cámara" alt="{{ $news->title }}">
+                            <img src="https://placehold.co/270x220/112233/FFFFFF?text=CCTV" alt="{{ $news->title }}">
                         @endif
                         <div>
                             @if($news->category)

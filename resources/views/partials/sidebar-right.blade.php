@@ -10,7 +10,7 @@
                 @if($news->image)
                     <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                 @else
-                    <img src="https://via.placeholder.com/200x150/235347/FFFFFF?text=Cámara" alt="{{ $news->title }}">
+                    <img src="https://placehold.co/200x150/112233/FFFFFF?text=CCTV" alt="{{ $news->title }}">
                 @endif
                 <div>
                     <h3>{{ $news->title }}</h3>
@@ -29,14 +29,14 @@
                     @if($ad->image)
                         <img src="{{ asset('storage/' . $ad->image) }}" alt="{{ $ad->title }}">
                     @else
-                        <img src="https://via.placeholder.com/300x200/e67e22/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
+                        <img src="https://placehold.co/300x200/005522/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
                     @endif
                 </a>
             @else
                 @if($ad->image)
                     <img src="{{ asset('storage/' . $ad->image) }}" alt="{{ $ad->title }}">
                 @else
-                    <img src="https://via.placeholder.com/300x200/e67e22/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
+                    <img src="https://placehold.co/300x200/005522/FFFFFF?text={{ urlencode($ad->title) }}" alt="{{ $ad->title }}">
                 @endif
             @endif
             <p class="mt-2 mb-0 small">{{ $ad->description ?? $ad->title }}</p>
