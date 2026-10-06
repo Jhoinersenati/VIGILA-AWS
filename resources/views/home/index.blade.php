@@ -176,9 +176,6 @@
 
 <div class="sl-page-container">
 
-    <!-- COLUMNA IZQUIERDA -->
-    @include('partials.sidebar-left')
-
     <!-- PORTADA CENTRAL -->
     <section class="sl-main-column">
         @if($coverNews)

@@ -1,15 +1,15 @@
 <style>
     .sl-page-container {
-        max-width: 1500px;
+        max-width: 1200px;
         margin: 16px auto;
         display: grid;
-        grid-template-columns: 320px minmax(0, 1fr) 350px;
-        gap: 16px;
-        padding: 0 12px;
+        grid-template-columns: minmax(0, 1fr) 350px;
+        gap: 24px;
+        padding: 0 16px;
         font-family: "Montserrat", Arial, sans-serif;
     }
 
-    .sl-left-column, .sl-right-column { display: flex; flex-direction: column; gap: 16px; }
+    .sl-right-column { display: flex; flex-direction: column; gap: 16px; }
 
     .sl-side-card {
         background: white;

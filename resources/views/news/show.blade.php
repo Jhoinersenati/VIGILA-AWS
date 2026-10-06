@@ -48,9 +48,6 @@
 @section('content')
 <div class="sl-page-container">
 
-    <!-- COLUMNA IZQUIERDA -->
-    @include('partials.sidebar-left')
-
     <!-- ARTÍCULO -->
     <section class="sl-main-column">
         <div class="sl-article-card">
