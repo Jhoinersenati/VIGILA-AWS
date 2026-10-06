@@ -31,6 +31,24 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 Route::get('/camaras/admin', [NewsController::class, 'index'])
     ->middleware('auth')
     ->name('news.index');
+
+// VIGILA AWS Cloud Simulator Routes (Multi-Page)
+Route::prefix('aws')->name('aws.')->group(function () {
+    Route::get('/monitoreo', function () { return view('aws.monitoring'); })->name('monitoring');
+    Route::get('/computo', function () { return view('aws.compute'); })->name('compute');
+    Route::get('/almacenamiento', function () { return view('aws.storage'); })->name('storage');
+    Route::get('/rds', function () { return view('aws.rds'); })->name('rds');
+    Route::get('/ssm', function () { return view('aws.ssm'); })->name('ssm');
+    Route::get('/tco', function () { return view('aws.tco'); })->name('tco');
+    Route::get('/sst', function () { return view('aws.sst'); })->name('sst');
+});
+
+// VIGILA AWS Cloud Simulator (Single Page Unified)
+// Dominio Principal de Producción y fallback local
+Route::domain('velasco.aywsolution.com')->group(function () {
+    Route::get('/', function () { return view('aws.single'); })->name('aws.single.domain');
+});
+Route::get('/simulador', function () { return view('aws.single'); })->name('aws.single.local');
 Route::resource('camaras', NewsController::class)->except(['index', 'show'])
     ->parameters(['camaras' => 'news'])
     ->names('news')
