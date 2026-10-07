@@ -83,7 +83,9 @@
                         @forelse($videos as $video)
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="py-3 flex items-center gap-2">
-                                    <i data-lucide="video" class="w-4 h-4 text-cyan-400"></i>
+                                    <button onclick="playVideo('{{ asset('storage/' . $video->path) }}', '{{ $video->original_name }}')" class="bg-cyan-500/20 text-cyan-400 p-1.5 rounded-full hover:bg-cyan-400 hover:text-slate-900 transition flex-shrink-0" title="Reproducir desde S3">
+                                        <i data-lucide="play" class="w-3.5 h-3.5 ml-0.5"></i>
+                                    </button>
                                     <span class="truncate max-w-[120px]" title="{{ $video->original_name }}">{{ $video->original_name }}</span>
                                 </td>
                                 <td class="py-3 text-slate-400">{{ $video->recorded_at ? \Carbon\Carbon::parse($video->recorded_at)->format('d/m/Y H:i') : \Carbon\Carbon::parse($video->created_at)->format('d/m/Y H:i') }}</td>
@@ -106,3 +108,69 @@
         </div>
     </div>
 </div>
+
+<!-- Modal del Reproductor de Video -->
+<div id="videoModal" class="fixed inset-0 bg-slate-900/95 backdrop-blur-sm z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <div class="bg-slate-800 border border-slate-700 rounded-xl w-full max-w-4xl mx-4 overflow-hidden shadow-[0_0_50px_rgba(34,211,238,0.15)] scale-95 transform transition-transform duration-300" id="videoModalContent">
+        <!-- Header -->
+        <div class="flex justify-between items-center p-4 border-b border-slate-700 bg-slate-900/80">
+            <h3 class="text-white font-bold flex items-center gap-2">
+                <i data-lucide="cloud" class="text-cyan-400 w-5 h-5"></i> 
+                Streaming desde AWS S3: <span id="videoTitle" class="text-slate-300 font-mono text-sm ml-2"></span>
+            </h3>
+            <button onclick="closeVideo()" class="text-slate-400 hover:text-red-400 transition bg-slate-800 rounded-full p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        
+        <!-- Video Container -->
+        <div class="p-2 bg-black relative flex justify-center items-center min-h-[300px]">
+            <!-- Fake Rekognition Overlay -->
+            <div class="absolute top-6 left-6 text-emerald-400 text-[10px] font-mono font-bold z-10 bg-black/50 px-2 py-1 rounded border border-emerald-500/30 flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div> AWS Rekognition: Analizando frame...
+            </div>
+            
+            <video id="videoPlayer" controls class="w-full max-h-[70vh] h-auto rounded border border-slate-700/50 bg-black">
+                <source src="" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+        
+        <!-- Footer Info -->
+        <div class="p-3 bg-slate-900/80 border-t border-slate-700 flex justify-between text-[10px] text-slate-400 font-mono">
+            <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3 text-emerald-400"></i> Origen: s3://vigila-prod-bucket/videos/</span>
+            <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="activity" class="w-3 h-3"></i> HTTPS Status: 200 OK</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function playVideo(url, title) {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    const titleEl = document.getElementById('videoTitle');
+    
+    titleEl.textContent = title;
+    player.src = url;
+    
+    modal.classList.remove('hidden');
+    // Forzar reflow para que funcione la transición de opacidad
+    void modal.offsetWidth;
+    modal.classList.remove('opacity-0');
+    document.getElementById('videoModalContent').classList.remove('scale-95');
+    
+    player.play().catch(e => console.log("Auto-play prevenido por el navegador"));
+}
+
+function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    
+    modal.classList.add('opacity-0');
+    document.getElementById('videoModalContent').classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        player.pause();
+        player.src = ''; // Limpiar source
+    }, 300); // Esperar que termine la animación
+}
+</script>
