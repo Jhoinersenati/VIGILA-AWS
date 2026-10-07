@@ -37,9 +37,9 @@
             <!-- Simulación de cámara -->
             <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative overflow-hidden bg-black shadow-inner">
                 
-                <!-- Video Real CCTV de Fondo (HTML5 Directo, Tráfico) -->
-                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale sepia-[.2] hue-rotate-[190deg] z-0">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-on-a-bridge-128-large.mp4" type="video/mp4">
+                <!-- Video Real CCTV de Fondo (HTML5 Directo, Tráfico Wikimedia) -->
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale sepia-[.3] hue-rotate-[190deg] z-0 mix-blend-screen border-none">
+                    <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4b/Traffic_Time_Lapse_-_Free_Stock_Video.webm/Traffic_Time_Lapse_-_Free_Stock_Video.webm.480p.vp9.webm" type="video/webm">
                 </video>
 
                 <style>
