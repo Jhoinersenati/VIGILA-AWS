@@ -83,7 +83,7 @@
                         @forelse($videos as $video)
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="py-3 flex items-center gap-2">
-                                    <button onclick="playVideo('{{ asset('storage/' . $video->path) }}', '{{ $video->original_name }}')" class="bg-cyan-500/20 text-cyan-400 p-1.5 rounded-full hover:bg-cyan-400 hover:text-slate-900 transition flex-shrink-0" title="Reproducir desde S3">
+                                    <button onclick="playVideo('{{ secure_asset('storage/' . $video->path) }}', '{{ $video->original_name }}')" class="bg-cyan-500/20 text-cyan-400 p-1.5 rounded-full hover:bg-cyan-400 hover:text-slate-900 transition flex-shrink-0" title="Reproducir desde S3">
                                         <i data-lucide="play" class="w-3.5 h-3.5 ml-0.5"></i>
                                     </button>
                                     <span class="truncate max-w-[120px]" title="{{ $video->original_name }}">{{ $video->original_name }}</span>
