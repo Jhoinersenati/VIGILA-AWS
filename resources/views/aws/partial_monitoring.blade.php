@@ -36,11 +36,23 @@
             </div>
             <!-- Simulación de cámara -->
             <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-48 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-cyan-400/10 flex flex-col items-center justify-start pt-1">
-                    <div class="bg-cyan-400 text-slate-900 text-[10px] font-bold px-1 mb-1">PERSON 99%</div>
+                <style>
+                    @keyframes scan-laser {
+                        0% { top: -5%; opacity: 0; }
+                        15% { opacity: 1; }
+                        85% { opacity: 1; }
+                        100% { top: 105%; opacity: 0; }
+                    }
+                </style>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-48 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-cyan-400/10 flex flex-col items-center justify-start pt-1 overflow-hidden">
+                    <div class="absolute top-0 left-0 bg-cyan-400 text-slate-900 text-[10px] font-bold px-1 mb-1 z-20">PERSON 99%</div>
+                    
+                    <!-- Láser de Escaneo IA -->
+                    <div class="absolute left-0 right-0 h-[2px] bg-cyan-300 shadow-[0_0_10px_3px_rgba(34,211,238,0.8)] z-20 animate-[scan-laser_2s_ease-in-out_infinite]"></div>
+
                     <!-- Wireframe simulación -->
-                    <div class="w-16 h-16 rounded-full border border-cyan-400/50 mb-2"></div>
-                    <div class="w-20 h-24 border border-cyan-400/50 rounded-t-lg"></div>
+                    <div class="w-16 h-16 rounded-full border border-cyan-400/50 mb-2 mt-4 z-10 opacity-70"></div>
+                    <div class="w-20 h-24 border border-cyan-400/50 rounded-t-lg z-10 opacity-70"></div>
                 </div>
             </div>
         </div>
