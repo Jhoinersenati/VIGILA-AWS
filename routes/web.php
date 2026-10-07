@@ -10,6 +10,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\PageController;
 
+// VIGILA AWS Cloud Simulator (Single Page Unified)
+// Prioridad alta: Dominio Principal de Producción y fallback local
+Route::domain('velasco.aywsolution.com')->group(function () {
+    Route::get('/', function () { return view('aws.single'); })->name('aws.single.domain');
+});
+Route::get('/simulador', function () { return view('aws.single'); })->name('aws.single.local');
+
 // Página principal
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -43,12 +50,7 @@ Route::prefix('aws')->name('aws.')->group(function () {
     Route::get('/sst', function () { return view('aws.sst'); })->name('sst');
 });
 
-// VIGILA AWS Cloud Simulator (Single Page Unified)
-// Dominio Principal de Producción y fallback local
-Route::domain('velasco.aywsolution.com')->group(function () {
-    Route::get('/', function () { return view('aws.single'); })->name('aws.single.domain');
-});
-Route::get('/simulador', function () { return view('aws.single'); })->name('aws.single.local');
+
 Route::resource('camaras', NewsController::class)->except(['index', 'show'])
     ->parameters(['camaras' => 'news'])
     ->names('news')
