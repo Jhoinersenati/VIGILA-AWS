@@ -35,7 +35,17 @@
                 <i data-lucide="user" class="w-3 h-3"></i> Movimiento Detectado
             </div>
             <!-- Simulación de cámara -->
-            <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative">
+            <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative overflow-hidden bg-black">
+                
+                <!-- Video Real CCTV de Fondo (YouTube Autoplay) -->
+                <div class="absolute inset-0 z-0 opacity-50 grayscale pointer-events-none">
+                    <!-- Se escala al 150% para ocultar los bordes negros y el logo de YouTube -->
+                    <iframe class="w-[150%] h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
+                            src="https://www.youtube.com/embed/u3FjeC9Wvj4?autoplay=1&mute=1&controls=0&loop=1&playlist=u3FjeC9Wvj4&showinfo=0&modestbranding=1&rel=0" 
+                            frameborder="0" allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>
+
                 <style>
                     @keyframes scan-laser {
                         0% { top: -5%; opacity: 0; }
@@ -44,15 +54,15 @@
                         100% { top: 105%; opacity: 0; }
                     }
                 </style>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-48 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-cyan-400/10 flex flex-col items-center justify-start pt-1 overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-48 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-cyan-400/20 flex flex-col items-center justify-start pt-1 overflow-hidden z-10 backdrop-blur-[1px]">
                     <div class="absolute top-0 left-0 bg-cyan-400 text-slate-900 text-[10px] font-bold px-1 mb-1 z-20">PERSON 99%</div>
                     
                     <!-- Láser de Escaneo IA -->
                     <div class="absolute left-0 right-0 h-[2px] bg-cyan-300 shadow-[0_0_10px_3px_rgba(34,211,238,0.8)] z-20 animate-[scan-laser_2s_ease-in-out_infinite]"></div>
 
                     <!-- Wireframe simulación -->
-                    <div class="w-16 h-16 rounded-full border border-cyan-400/50 mb-2 mt-4 z-10 opacity-70"></div>
-                    <div class="w-20 h-24 border border-cyan-400/50 rounded-t-lg z-10 opacity-70"></div>
+                    <div class="w-16 h-16 rounded-full border border-cyan-400/70 mb-2 mt-4 z-10 opacity-80"></div>
+                    <div class="w-20 h-24 border border-cyan-400/70 rounded-t-lg z-10 opacity-80"></div>
                 </div>
             </div>
         </div>
