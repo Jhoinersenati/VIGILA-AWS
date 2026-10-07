@@ -30,21 +30,17 @@
             </div>
         </div>
         <div class="flex-1 relative z-10 flex items-center justify-center p-4">
-            <div class="absolute top-2 left-2 text-xs font-mono text-white/70">{{ now()->format('H:i:s') }}.5</div>
-            <div class="absolute top-2 right-2 bg-red-500 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 font-bold animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.5)]">
+            <div class="absolute top-2 left-2 text-xs font-mono text-white/70 z-20">{{ now()->format('H:i:s') }}.5</div>
+            <div class="absolute top-2 right-2 bg-red-500 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 font-bold animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.5)] z-20">
                 <i data-lucide="user" class="w-3 h-3"></i> Movimiento Detectado
             </div>
             <!-- Simulación de cámara -->
-            <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative overflow-hidden bg-black">
+            <div class="w-full h-full border border-cyan-500/30 rounded flex items-center justify-center relative overflow-hidden bg-black shadow-inner">
                 
-                <!-- Video Real CCTV de Fondo (YouTube Autoplay) -->
-                <div class="absolute inset-0 z-0 opacity-50 grayscale pointer-events-none">
-                    <!-- Se escala al 150% para ocultar los bordes negros y el logo de YouTube -->
-                    <iframe class="w-[150%] h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
-                            src="https://www.youtube.com/embed/u3FjeC9Wvj4?autoplay=1&mute=1&controls=0&loop=1&playlist=u3FjeC9Wvj4&showinfo=0&modestbranding=1&rel=0" 
-                            frameborder="0" allow="autoplay; encrypted-media">
-                    </iframe>
-                </div>
+                <!-- Video Real CCTV de Fondo (HTML5 Directo, Tráfico) -->
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale sepia-[.2] hue-rotate-[190deg] z-0">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-on-a-bridge-128-large.mp4" type="video/mp4">
+                </video>
 
                 <style>
                     @keyframes scan-laser {
@@ -55,14 +51,13 @@
                     }
                 </style>
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-48 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-cyan-400/20 flex flex-col items-center justify-start pt-1 overflow-hidden z-10 backdrop-blur-[1px]">
-                    <div class="absolute top-0 left-0 bg-cyan-400 text-slate-900 text-[10px] font-bold px-1 mb-1 z-20">PERSON 99%</div>
+                    <div class="absolute top-0 left-0 bg-cyan-400 text-slate-900 text-[10px] font-bold px-1 mb-1 z-20">VEHICLE 99%</div>
                     
                     <!-- Láser de Escaneo IA -->
                     <div class="absolute left-0 right-0 h-[2px] bg-cyan-300 shadow-[0_0_10px_3px_rgba(34,211,238,0.8)] z-20 animate-[scan-laser_2s_ease-in-out_infinite]"></div>
 
                     <!-- Wireframe simulación -->
-                    <div class="w-16 h-16 rounded-full border border-cyan-400/70 mb-2 mt-4 z-10 opacity-80"></div>
-                    <div class="w-20 h-24 border border-cyan-400/70 rounded-t-lg z-10 opacity-80"></div>
+                    <div class="w-16 h-16 border border-cyan-400/70 mb-2 mt-8 z-10 opacity-80 rounded-sm"></div>
                 </div>
             </div>
         </div>
