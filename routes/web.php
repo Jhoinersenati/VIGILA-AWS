@@ -10,12 +10,22 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\PageController;
 
+use App\Models\AwsVideo;
+
 // VIGILA AWS Cloud Simulator (Single Page Unified)
 // Prioridad alta: Dominio Principal de Producción y fallback local
 Route::domain('velasco.aywsolution.com')->group(function () {
-    Route::get('/', function () { return view('aws.single'); })->name('aws.single.domain');
+    Route::get('/', function () { 
+        $videos = AwsVideo::latest()->get();
+        return view('aws.single', compact('videos')); 
+    })->name('aws.single.domain');
 });
-Route::get('/simulador', function () { return view('aws.single'); })->name('aws.single.local');
+Route::get('/simulador', function () { 
+    $videos = AwsVideo::latest()->get();
+    return view('aws.single', compact('videos')); 
+})->name('aws.single.local');
+
+Route::post('/aws/videos/upload', [App\Http\Controllers\AwsVideoController::class, 'store'])->name('aws.videos.upload');
 
 // Página principal
 Route::get('/', [HomeController::class, 'index'])->name('home');
