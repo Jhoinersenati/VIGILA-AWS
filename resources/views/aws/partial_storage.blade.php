@@ -86,7 +86,7 @@
                                     <i data-lucide="video" class="w-4 h-4 text-cyan-400"></i>
                                     <span class="truncate max-w-[120px]" title="{{ $video->original_name }}">{{ $video->original_name }}</span>
                                 </td>
-                                <td class="py-3 text-slate-400">{{ $video->recorded_at ? $video->recorded_at->format('d/m/Y H:i') : $video->created_at->format('d/m/Y H:i') }}</td>
+                                <td class="py-3 text-slate-400">{{ $video->recorded_at ? \Carbon\Carbon::parse($video->recorded_at)->format('d/m/Y H:i') : \Carbon\Carbon::parse($video->created_at)->format('d/m/Y H:i') }}</td>
                                 <td class="py-3 text-slate-400">{{ number_format($video->size_bytes / 1048576, 2) }} MB</td>
                                 <td class="py-3">
                                     <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/30">{{ $video->storage_class }}</span>

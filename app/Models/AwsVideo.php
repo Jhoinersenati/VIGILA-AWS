@@ -15,4 +15,8 @@ class AwsVideo extends Model
         'camera_id',
         'recorded_at'
     ];
+
+    protected $casts = [
+        'recorded_at' => 'datetime',
+    ];
 }
